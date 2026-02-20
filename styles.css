@@ -1,42 +1,80 @@
-.container {
-    width: 90%;
-    margin: auto;
-    background: linear-gradient(to right, #f0f0f0, #e0e0e0);
-    padding: 20px;
-    border-radius: 8px;
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
 }
 
-h1, h2, h3 {
-    color: #333;
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.screen {
+    width: 100%;
+    height: 80vh;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.game-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
     text-align: center;
 }
 
-.button {
-    background: linear-gradient(45deg, #ff6b6b, #f7b733);
-    color: white;
-    padding: 10px 20px;
+button {
+    background-color: #4CAF50;
     border: none;
-    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    border-radius: 5px;
 }
 
-.button:hover {
-    background: linear-gradient(45deg, #f7b733, #ff6b6b);
+canvas {
+    border: 1px solid #ccc;
+    display: block;
+    margin: 0 auto;
 }
 
-.game-controls {
+.mobile-controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 20px;
 }
 
 @media (max-width: 768px) {
-    .container {
-        width: 100%;
-    }
-    .game-controls {
+    .navbar {
         flex-direction: column;
-        align-items: center;
+    }
+    .screen {
+        height: 60vh;
+    }
+    .mobile-controls {
+        flex-direction: column;
     }
 }
