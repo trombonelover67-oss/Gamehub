@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>GameHub - Play Free Games</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>🎮 GameHub</h1>
+        <div class="nav-links">
+            <button class="nav-btn" onclick="showHome()">Home</button>
+            <button class="nav-btn" onclick="showGames()">Games</button>
+        </div>
+    </div>
+
+    <div id="homeScreen" class="screen active">
+        <div class="hero">
+            <h2>Welcome to GameHub!</h2>
+            <p>Play awesome games online, completely free</p>
+            <button class="btn-large" onclick="showGames()">Start Playing</button>
+        </div>
+        <div class="features">
+            <div class="feature-card">
+                <h3>🎯 OvO</h3>
+                <p>A challenging platformer with physics-based mechanics</p>
+            </div>
+            <div class="feature-card">
+                <h3>🏎️ Drive Mad</h3>
+                <p>Navigate crazy obstacles and physics-defying challenges</p>
+            </div>
+            <div class="feature-card">
+                <h3>⚽ Tap Tap Shots</h3>
+                <p>Time your shots perfectly in this rhythm-based game</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="gamesScreen" class="screen">
+        <h2>Select a Game</h2>
+        <div class="games-grid">
+            <div class="game-card" onclick="startGame('ovo')">
+                <div class="game-icon">🎯</div>
+                <h3>OvO</h3>
+                <p>Platformer</p>
+            </div>
+            <div class="game-card" onclick="startGame('drivemad')">
+                <div class="game-icon">🏎️</div>
+                <h3>Drive Mad</h3>
+                <p>Racing</p>
+            </div>
+            <div class="game-card" onclick="startGame('taptap')">
+                <div class="game-icon">⚽</div>
+                <h3>Tap Tap Shots</h3>
+                <p>Rhythm Game</p>
+            </div>
+        </div>
+        <button class="btn-back" onclick="showGames()">← Back</button>
+    </div>
+
+    <div id="ovoGame" class="screen">
+        <div class="game-header">
+            <h2>OvO</h2>
+            <button class="btn-back" onclick="showGames()">← Back</button>
+        </div>
+        <div class="game-container">
+            <canvas id="ovoCanvas"></canvas>
+        </div>
+        <div class="game-info">
+            <p id="controlsOvo">Arrow Keys or WASD to move | Space to jump | Reach the flag!</p>
+            <p id="ovoLevel">Level: 1</p>
+            <p id="ovoDeaths">Deaths: 0</p>
+        </div>
+        <div class="mobile-controls" id="ovoMobileControls">
+            <button class="control-btn left-btn" id="ovoLeft">←</button>
+            <button class="control-btn jump-btn" id="ovoJump">JUMP</button>
+            <button class="control-btn right-btn" id="ovoRight">→</button>
+        </div>
+    </div>
+
+    <div id="drivemadGame" class="screen">
+        <div class="game-header">
+            <h2>Drive Mad</h2>
+            <button class="btn-back" onclick="showGames()">← Back</button>
+        </div>
+        <div class="game-container">
+            <canvas id="drivemadCanvas"></canvas>
+        </div>
+        <div class="game-info">
+            <p id="controlsDriveMad">Arrow Keys to drive | Balance your vehicle | Avoid obstacles!</p>
+            <p id="drivemadDistance">Distance: 0m</p>
+            <p id="drivemadSpeed">Speed: 0</p>
+        </div>
+        <div class="mobile-controls" id="drivemadMobileControls">
+            <button class="control-btn left-btn" id="driveLeft">←</button>
+            <button class="control-btn up-btn" id="driveUp">↑</button>
+            <button class="control-btn right-btn" id="driveRight">→</button>
+        </div>
+    </div>
+
+    <div id="taptapGame" class="screen">
+        <div class="game-header">
+            <h2>Tap Tap Shots</h2>
+            <button class="btn-back" onclick="showGames()">← Back</button>
+        </div>
+        <div class="game-container">
+            <canvas id="taptapCanvas"></canvas>
+        </div>
+        <div class="game-info">
+            <p id="controlsTapTap">Click/Tap when the ball reaches the circle | Perfect timing!</p>
+            <p id="taptapScore">Score: 0</p>
+            <p id="taptapCombo">Combo: 0</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
